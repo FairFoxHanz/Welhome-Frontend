@@ -10,7 +10,10 @@ export default class App extends Component {
   setUrl(imgUrl){
     this.setState({imgUrl});
   }
-
+// http://localhost:8080/builder/helpers/offertType
+// http://localhost:8080/builder/helpers/marketType
+// http://localhost:8080/builder/helpers/propertyType
+// http://localhost:8080/builder/helpers/featureType
   abcd(){
     var myHeaders = new Headers();
     var myInit = { method: 'GET',
