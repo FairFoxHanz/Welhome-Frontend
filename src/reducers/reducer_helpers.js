@@ -1,7 +1,15 @@
 import _ from 'lodash';
 import { FETCH_SELECTION_HELPERS } from '../actions/action_helpers'
 
-export default function(state = {}, action){
+export default function(state = {
+    offerTypes: [],
+    marketTypes: [],
+    propertyTypes: [],
+    featureTypes: [],
+    securityTypes: [],
+    materialTypes: [],
+    heatingTypes: [],
+}, action){
     switch (action.type){
         case FETCH_SELECTION_HELPERS:
             const helpers = {

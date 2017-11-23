@@ -33,6 +33,24 @@ class PropertyNew extends Component {
         );
     }
 
+    renderSelect(field) {
+        const { input, label, placeholder, options } = field;
+
+        return (
+            <div>
+                <label>{label}</label>
+                <select
+                    id="sel1"
+                    className="form-control"
+                    type="text"
+                >
+                <option hidden value="" defaultValue>Wybierz typ posiadłości...</option>
+                {options.map(option => (<option key={option} value={option}>{option}</option>))}
+                </select>
+            </div>
+        );
+    }
+
     //   onSubmit(values){
     //     this.props.createPost(values, () => {
     //       this.props.history.push('/');
@@ -46,7 +64,7 @@ class PropertyNew extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form onClick={this.abc.bind(this)}>
+            <form>
                 <Field
                     name="title"
                     label="Title:"
@@ -65,6 +83,13 @@ class PropertyNew extends Component {
                     placeholder="Content of your post..."
                     component={this.renderField}
                 />
+                <Field 
+                    name="propertyType" 
+                    label="Typ posiadłości:"
+                    component={this.renderSelect}
+                    options={this.props.helpers.propertyTypes}
+                />
+                <br/>
                 <button type="submit" className="btn btn-primary">Submit</button>
                 <Link className="btn btn-danger" to="/">
                     Cancel
