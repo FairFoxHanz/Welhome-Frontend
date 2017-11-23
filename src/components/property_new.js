@@ -7,11 +7,11 @@ import { fetchSelectionHelpers } from '../actions/action_helpers';
 
 class PropertyNew extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.props.fetchSelectionHelpers();
     }
-    
+
     renderField(field) {
         const { input, label, placeholder } = field;
         const { meta: { touched, error } } = field;
@@ -34,28 +34,27 @@ class PropertyNew extends Component {
     }
 
     renderSelect(field) {
-        const { input, label, placeholder, options } = field;
+        const { input, label, options } = field;
 
         return (
-            <div>
+            <div className="form-group">
                 <label>{label}</label>
                 <select
-                    id="sel1"
                     className="form-control"
                     type="text"
+                    {...input}
                 >
-                <option hidden value="" defaultValue>Wybierz typ posiadłości...</option>
-                {options.map(option => (<option key={option} value={option}>{option}</option>))}
+                    <option hidden value="" defaultValue>Wybierz typ posiadłości...</option>
+                    {options.map(option => (<option key={option} value={option}>{option}</option>))}
                 </select>
             </div>
         );
     }
 
-    //   onSubmit(values){
-    //     this.props.createPost(values, () => {
-    //       this.props.history.push('/');
-    //     });
-    //   }
+    onSubmit(values) {
+        console.log(values);
+    }
+
     abc() {
         console.log(this.props.helpers);
     }
@@ -64,7 +63,7 @@ class PropertyNew extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field
                     name="title"
                     label="Title:"
@@ -83,13 +82,13 @@ class PropertyNew extends Component {
                     placeholder="Content of your post..."
                     component={this.renderField}
                 />
-                <Field 
-                    name="propertyType" 
+                <Field
+                    name="propertyType"
                     label="Typ posiadłości:"
                     component={this.renderSelect}
                     options={this.props.helpers.propertyTypes}
-                />
-                <br/>
+                ><option value="cokolwiek">some</option></Field>
+                <br />
                 <button type="submit" className="btn btn-primary">Submit</button>
                 <Link className="btn btn-danger" to="/">
                     Cancel
@@ -111,11 +110,12 @@ function validate(values) {
     if (!values.content) {
         errors.content = "Enter some content!";
     }
+    console.log(values.propertyTypes);
 
     return errors;
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
     return { helpers: state.helpers }
 }
 
