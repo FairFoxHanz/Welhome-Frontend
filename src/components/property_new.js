@@ -3,15 +3,15 @@ import { Field, reduxForm } from 'redux-form';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createProperty } from '../actions';
-import {
-    fetchOfferTypes,
-    fetchMarketTypes,
-    fetchFeatureTypes,
-    fetchPropertyTypes
-} from '../actions/action_helpers';
+import { fetchSelectionHelpers } from '../actions/action_helpers';
 
 class PropertyNew extends Component {
 
+    constructor(props){
+        super(props);
+        this.props.fetchSelectionHelpers();
+    }
+    
     renderField(field) {
         const { input, label, placeholder } = field;
         const { meta: { touched, error } } = field;
@@ -39,14 +39,7 @@ class PropertyNew extends Component {
     //     });
     //   }
     abc() {
-        //console.log(this.props);
-        this.props.fetchFeatureTypes();
-
-        this.props.fetchMarketTypes();
-
-        this.props.fetchOfferTypes();
-
-        this.props.fetchPropertyTypes();
+        console.log(this.props.helpers);
     }
 
     render() {
@@ -97,15 +90,16 @@ function validate(values) {
     return errors;
 }
 
+function mapStateToProps(state){
+    return { helpers: state.helpers }
+}
+
 export default reduxForm({
     validate,
     form: 'PostsNewForm'
 })(
-    connect(null, {
+    connect(mapStateToProps, {
         createProperty,
-        fetchFeatureTypes,
-        fetchMarketTypes,
-        fetchOfferTypes,
-        fetchPropertyTypes
+        fetchSelectionHelpers
     })(PropertyNew)
     );
