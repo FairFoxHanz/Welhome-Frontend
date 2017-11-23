@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createProperty } from '../actions';
+import DropDownSelect from './drop_down_select'
 import { fetchSelectionHelpers } from '../actions/action_helpers';
 
 class PropertyNew extends Component {
@@ -33,26 +34,16 @@ class PropertyNew extends Component {
         );
     }
 
-    renderSelect(field) {
-        const { input, label, options } = field;
-
-        return (
-            <div className="form-group">
-                <label>{label}</label>
-                <select
-                    className="form-control"
-                    type="text"
-                    {...input}
-                >
-                    <option hidden value="" defaultValue>Wybierz typ posiadłości...</option>
-                    {options.map(option => (<option key={option} value={option}>{option}</option>))}
-                </select>
-            </div>
-        );
-    }
 
     onSubmit(values) {
-        console.log(values);
+        const newProperty = {
+            information: {
+                offerType: values.offerType,
+                marketType: values.marketType,
+                propertyType: values.propertyType,                
+            }
+        }
+        console.log(newProperty);
     }
 
     abc() {
@@ -82,16 +73,31 @@ class PropertyNew extends Component {
                     placeholder="Content of your post..."
                     component={this.renderField}
                 />
-                <Field
+                <DropDownSelect
+                    name="offerType"
+                    label="Oferta"
+                    placeholder="Podaj rodzaj oferty..."
+                    options={this.props.helpers.offerTypes}
+
+                />
+                <DropDownSelect
+                    name="marketType"
+                    label="Rynek"
+                    placeholder="Podaj docelowy rynek..."
+                    options={this.props.helpers.marketTypes}
+
+                />
+                <DropDownSelect
                     name="propertyType"
-                    label="Typ posiadłości:"
-                    component={this.renderSelect}
+                    label="Typ posiadłości"
+                    placeholder="Podaj typ posiadłości..."
                     options={this.props.helpers.propertyTypes}
+
                 />
                 <br />
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Dodaj</button>
                 <Link className="btn btn-danger" to="/">
-                    Cancel
+                    Anuluj
           </Link>
             </form>
         );
@@ -121,7 +127,7 @@ function mapStateToProps(state) {
 
 export default reduxForm({
     validate,
-    form: 'PostsNewForm'
+    form: 'CreateNewProperty'
 })(
     connect(mapStateToProps, {
         createProperty,
