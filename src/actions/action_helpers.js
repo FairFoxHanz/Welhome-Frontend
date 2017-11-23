@@ -7,24 +7,22 @@ const headers = new Headers({
     'Credentials': 'same-origin'
 })
 
-const OFFER_HELPERS_URL = 'http://localhost:8080/builder/helpers/offertType';
-const MARKET_HELPERS_URL = 'http://localhost:8080/builder/helpers/marketType';
-const PROPERTY_HELPERS_URL = 'http://localhost:8080/builder/helpers/propertyType';
-const FEATURE_HELPERS_URL = 'http://localhost:8080/builder/helpers/featureType';
+const baseUrl = 'http://localhost:8080/builder/helpers/';
 
+const urls = [`${baseUrl}offertType`, `${baseUrl}marketType`,
+`${baseUrl}propertyType`, `${baseUrl}featureType`,
+`${baseUrl}securityType`, `${baseUrl}materialType`,
+`${baseUrl}heatingType`,
+]
 export function fetchSelectionHelpers() {
-    const helpers = [
-        getJsonResponse(OFFER_HELPERS_URL),
-        getJsonResponse(MARKET_HELPERS_URL),
-        getJsonResponse(PROPERTY_HELPERS_URL),
-        getJsonResponse(FEATURE_HELPERS_URL)
-    ]
     return {
         type: FETCH_SELECTION_HELPERS,
-        payload: Promise.all(helpers)
+        payload: Promise.all(fetchHelpers())
     }
 }
 
-function getJsonResponse(requestUrl) {
- return fetch(requestUrl, {headers}).then(response => response.json());
+function fetchHelpers() {
+    const helpers = urls.map(url => fetch(url, {headers}).then(response => response.json()
+    .catch(error => console.log(error))));
+    return helpers;
 }

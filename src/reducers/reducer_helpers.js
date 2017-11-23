@@ -9,6 +9,9 @@ export default function(state = {}, action){
                 marketTypes: action.payload[1],
                 propertyTypes: action.payload[2],
                 featureTypes: action.payload[3],
+                securityTypes: action.payload[4],
+                materialTypes: action.payload[5],
+                heatingTypes: action.payload[6],
             }
             return helpers;
       default:
