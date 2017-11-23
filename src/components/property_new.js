@@ -87,7 +87,7 @@ class PropertyNew extends Component {
                     label="Typ posiadłości:"
                     component={this.renderSelect}
                     options={this.props.helpers.propertyTypes}
-                ><option value="cokolwiek">some</option></Field>
+                />
                 <br />
                 <button type="submit" className="btn btn-primary">Submit</button>
                 <Link className="btn btn-danger" to="/">
