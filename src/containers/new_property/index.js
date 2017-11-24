@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { createProperty } from '../../actions';
 import { fetchSelectionHelpers } from '../../actions/action_helpers';
 import InformationSection from './information_section'
-import CheckBoxGroup from '../../components/check_box_group';
 import DetailsSection from './details_section';
-import FeatureSection from './features_section';
+import FeaturesSection from './features_section';
+import ExtraFeaturesSection from './extra_features_section';
 
 class PropertyNew extends Component {
 
@@ -33,7 +33,8 @@ class PropertyNew extends Component {
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <DetailsSection />
                 <InformationSection options={this.props.helpers} />
-                <FeatureSection options={this.props.helpers} />
+                <FeaturesSection options={this.props.helpers} />
+                <ExtraFeaturesSection options={this.props.helpers} />
                 <br />
                 <button type="submit" className="btn btn-primary">Dodaj</button>
                 <Link className="btn btn-danger" to="/">Anuluj</Link>
