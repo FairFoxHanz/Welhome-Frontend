@@ -6,6 +6,8 @@ import { createProperty } from '../../actions';
 import { fetchSelectionHelpers } from '../../actions/action_helpers';
 import InformationSection from './information_section'
 import CheckBoxGroup from '../../components/check_box_group';
+import DetailsSection from './details_section';
+import FeatureSection from './features_section';
 
 class PropertyNew extends Component {
 
@@ -14,42 +16,14 @@ class PropertyNew extends Component {
         this.props.fetchSelectionHelpers();
     }
 
-    renderField(field) {
-        const { input, label, placeholder } = field;
-        const { meta: { touched, error } } = field;
-        const className = `form-group ${touched && error ? 'has-danger' : ''}`;
-
-        return (
-            <div className={className} >
-                <label>{label}</label>
-                <input
-                    placeholder={placeholder}
-                    className="form-control"
-                    type="text"
-                    {...input}
-                />
-                <div className="text-help">
-                    {touched ? error : ''}
-                </div>
-            </div>
-        );
-    }
-
-
     onSubmit(values) {
         const newProperty = {
             information: {
                 offerType: values.offerType,
                 marketType: values.marketType,
-                propertyType: values.propertyType,                
+                propertyType: values.propertyType,
             }
         }
-        console.log(newProperty);
-        console.log(values.cokoliek);
-    }
-
-    abc() {
-        console.log(this.props.helpers);
     }
 
     render() {
@@ -57,51 +31,32 @@ class PropertyNew extends Component {
 
         return (
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <Field
-                    name="title"
-                    label="Title:"
-                    placeholder="Title for your post..."
-                    component={this.renderField}
-                />
-                <Field
-                    name="categories"
-                    label="Categories:"
-                    placeholder="Categories for your post..."
-                    component={this.renderField}
-                />
-                <Field
-                    name="content"
-                    label="Content:"
-                    placeholder="Content of your post..."
-                    component={this.renderField}
-                />
-                <InformationSection options={this.props.helpers}/>
+                <DetailsSection />
+                <InformationSection options={this.props.helpers} />
+                <FeatureSection options={this.props.helpers} />
                 <br />
-                <CheckBoxGroup name="cokoliek" label="awe" options={this.props.helpers.securityTypes}/>
                 <button type="submit" className="btn btn-primary">Dodaj</button>
-                <Link className="btn btn-danger" to="/">
-                    Anuluj
-          </Link>
+                <Link className="btn btn-danger" to="/">Anuluj</Link>
             </form>
         );
     }
 }
 
 function validate(values) {
-    const errors = {};
+    // const errors = {};
 
-    if (!values.title) {
-        errors.title = "Enter a title!";
-    }
-    if (!values.categories) {
-        errors.categories = "Enter some categories!";
-    }
-    if (!values.content) {
-        errors.content = "Enter some content!";
-    }
-    console.log(values.propertyTypes);
+    // if (!values.cena) {
+    //     errors.title = "Enter a title!";
+    // }
+    // if (!values.categories) {
+    //     errors.categories = "Enter some categories!";
+    // }
+    // if (!values.content) {
+    //     errors.content = "Enter some content!";
+    // }
+    // console.log(values.propertyTypes);
 
-    return errors;
+    // return errors;
 }
 
 function mapStateToProps(state) {

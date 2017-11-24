@@ -4,9 +4,9 @@ import DropDownSelect from '../../components/drop_down_select';
 export default function (props) {
     const { offerTypes, marketTypes, propertyTypes } = props.options;
     return (
-        <div className="well">
+        <div>
             <h4>Ogólne informacje</h4>
-            <div className="well-sm">
+            <div>
                 <DropDownSelect
                     name="offerType"
                     label="Oferta"

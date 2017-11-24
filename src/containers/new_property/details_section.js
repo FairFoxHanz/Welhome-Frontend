@@ -1,29 +1,31 @@
 import React from 'react';
-export default function (props) {
-    // const { offerTypes, marketTypes, propertyTypes } = props.options;
-    // return (
-    //     <div className="well">
-    //         <h4>Ogólne informacje</h4>
-    //         <div className="well-sm">
-    //             <DropDownSelect
-    //                 name="offerType"
-    //                 label="Oferta"
-    //                 placeholder="Podaj rodzaj oferty..."
-    //                 options={offerTypes}
-    //             />
-    //             <DropDownSelect
-    //                 name="marketType"
-    //                 label="Rynek"
-    //                 placeholder="Podaj docelowy rynek..."
-    //                 options={marketTypes}
-    //             />
-    //             <DropDownSelect
-    //                 name="propertyType"
-    //                 label="Typ posiadłości"
-    //                 placeholder="Podaj typ posiadłości..."
-    //                 options={propertyTypes}
-    //             />
-    //         </div>
-    //     </div>
-    // );
+import InputField from '../../components/input_field';
+
+export default function () {
+    return (
+        <div>
+            <h4>Detale: </h4>
+            <div>
+                <InputField 
+                    name="price"
+                    label="Cena:"
+                    placeholder="Podaj cenę..."
+                    type="number" 
+                    value="1000" 
+                    min="0" 
+                    step="0.01"
+                />
+                <InputField 
+                    name="rent"
+                    label="Czynsz:"
+                    placeholder="Podaj wysokość Czynszu..."
+                />
+                <InputField 
+                    name="buildingType"
+                    label="Typ budynku:"
+                    placeholder="Podaj typ budynku..."
+                />
+            </div>
+        </div>
+    );
 }

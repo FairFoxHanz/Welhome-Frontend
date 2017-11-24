@@ -8,9 +8,10 @@ export default (props) => {
 
         return options.map((option, index) => {
             return (
-                <div className="checkbox-inline no_indent" key={index}>
-                    <label>
+                <div className="form-check form-check-inline" key={index}>
+                    <label className="form-check-label">
                         <input
+                            className="form-check-input"
                             type="checkbox"
                             name={`${input.name}[${index}]`}
                             value={option}
@@ -26,13 +27,14 @@ export default (props) => {
                             }} />
                         {option}
                     </label>
-                </div>)
+                </div>
+            )
         })
     }
 
     function renderCheckBoxesGroup(field) {
         return (
-            <div className="form-vertical">
+            <div>
                 {renderCheckBoxes(field)}
             </div>
         )
