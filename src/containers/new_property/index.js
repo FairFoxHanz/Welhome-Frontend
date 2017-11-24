@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createProperty } from '../actions';
-import DropDownSelect from './drop_down_select'
-import { fetchSelectionHelpers } from '../actions/action_helpers';
+import { createProperty } from '../../actions';
+import { fetchSelectionHelpers } from '../../actions/action_helpers';
+import InformationSection from './information_section'
+import CheckBoxGroup from '../../components/check_box_group';
 
 class PropertyNew extends Component {
 
@@ -44,6 +45,7 @@ class PropertyNew extends Component {
             }
         }
         console.log(newProperty);
+        console.log(values.cokoliek);
     }
 
     abc() {
@@ -73,28 +75,9 @@ class PropertyNew extends Component {
                     placeholder="Content of your post..."
                     component={this.renderField}
                 />
-                <DropDownSelect
-                    name="offerType"
-                    label="Oferta"
-                    placeholder="Podaj rodzaj oferty..."
-                    options={this.props.helpers.offerTypes}
-
-                />
-                <DropDownSelect
-                    name="marketType"
-                    label="Rynek"
-                    placeholder="Podaj docelowy rynek..."
-                    options={this.props.helpers.marketTypes}
-
-                />
-                <DropDownSelect
-                    name="propertyType"
-                    label="Typ posiadłości"
-                    placeholder="Podaj typ posiadłości..."
-                    options={this.props.helpers.propertyTypes}
-
-                />
+                <InformationSection options={this.props.helpers}/>
                 <br />
+                <CheckBoxGroup name="cokoliek" label="awe" options={this.props.helpers.securityTypes}/>
                 <button type="submit" className="btn btn-primary">Dodaj</button>
                 <Link className="btn btn-danger" to="/">
                     Anuluj

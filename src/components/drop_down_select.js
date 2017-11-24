@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
-import { Link, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { createProperty } from '../actions';
-import { fetchSelectionHelpers } from '../actions/action_helpers';
+import React from 'react';
+import { Field } from 'redux-form';
 
-const DropDownSelect = (props) => {
+export default (props) => {
 
     function renderSelect(field) {
         const { input, placeholder, label, options } = field;
@@ -34,7 +30,3 @@ const DropDownSelect = (props) => {
     />)
 
 }
-
-export default reduxForm({
-    form: 'CreateNewProperty'
-})(DropDownSelect);

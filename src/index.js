@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import reducers from './reducers';
-import PropertyNew from './components/property_new';
+import PropertyNew from './containers/new_property/';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 

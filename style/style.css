@@ -1,0 +1,20 @@
+.well {
+    background-color: #ffe4b54d;
+}
+
+.well-sm {
+    background-color: #fcd79762;
+}
+
+option {
+    background-color: #fcd79728;
+}
+
+select {
+    background-color: white;
+    background: white;
+}
+
+.form-control {
+    background-color: white;
+}
