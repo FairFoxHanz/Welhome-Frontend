@@ -12,7 +12,7 @@ const baseUrl = 'http://localhost:8080/builder/helpers/';
 const urls = [`${baseUrl}offertType`, `${baseUrl}marketType`,
 `${baseUrl}propertyType`, `${baseUrl}featureType`,
 `${baseUrl}securityType`, `${baseUrl}materialType`,
-`${baseUrl}heatingType`,
+`${baseUrl}heatingType`, `${baseUrl}buildingType`
 ]
 export function fetchSelectionHelpers() {
     return {

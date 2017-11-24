@@ -9,6 +9,7 @@ export default function(state = {
     securityTypes: [],
     materialTypes: [],
     heatingTypes: [],
+    buildingTypes: [],
 }, action){
     switch (action.type){
         case FETCH_SELECTION_HELPERS:
@@ -20,6 +21,7 @@ export default function(state = {
                 securityTypes: action.payload[4],
                 materialTypes: action.payload[5],
                 heatingTypes: action.payload[6],
+                buildingTypes: action.payload[7],
             }
             return helpers;
       default:

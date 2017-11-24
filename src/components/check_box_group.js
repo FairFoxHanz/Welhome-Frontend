@@ -35,6 +35,7 @@ export default (props) => {
     function renderCheckBoxesGroup(field) {
         return (
             <div>
+                <div>{field.label}</div>
                 {renderCheckBoxes(field)}
             </div>
         )
@@ -43,7 +44,6 @@ export default (props) => {
     return (<Field
         label={props.label}
         name={props.name}
-        placeholder={props.placeholder}
         options={props.options}
         component={renderCheckBoxesGroup}
     />)

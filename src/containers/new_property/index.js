@@ -8,6 +8,8 @@ import InformationSection from './information_section'
 import DetailsSection from './details_section';
 import FeaturesSection from './features_section';
 import ExtraFeaturesSection from './extra_features_section';
+import LocalisationSection from './localisation_section';
+import DescriptionSection from './description_section';
 
 class PropertyNew extends Component {
 
@@ -30,15 +32,24 @@ class PropertyNew extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                <DetailsSection />
-                <InformationSection options={this.props.helpers} />
-                <FeaturesSection options={this.props.helpers} />
-                <ExtraFeaturesSection options={this.props.helpers} />
-                <br />
-                <button type="submit" className="btn btn-primary">Dodaj</button>
-                <Link className="btn btn-danger" to="/">Anuluj</Link>
-            </form>
+            <div className="card">
+                <div className="list-group list-group-flush">
+                    <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+                        <InformationSection options={this.props.helpers} />
+                        <DetailsSection options={this.props.helpers} />
+                        <FeaturesSection options={this.props.helpers} />
+                        <ExtraFeaturesSection options={this.props.helpers} />
+                        <LocalisationSection options={this.props.helpers} />
+                        <DescriptionSection options={this.props.helpers} />
+                        <div className="list-group-item container">
+                            <div className="row">
+                                <button type="submit" className="btn btn-success col">Dodaj</button>
+                                <Link className="btn btn-secondary col" to="/">Anuluj</Link>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         );
     }
 }
