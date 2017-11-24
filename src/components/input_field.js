@@ -16,14 +16,14 @@ export default (props) => {
                         var $input = this,
                             value = $input.val(),
                             num = parseFloat(value).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-                
+
                         $input.siblings('.add-on').text('$' + num);
                     }}
                     placeholder={placeholder}
                     className="form-control"
                     type="text"
                     {...input}
-                /> 
+                />
                 <div className="text-help">
                     {touched ? error : ''}
                 </div>

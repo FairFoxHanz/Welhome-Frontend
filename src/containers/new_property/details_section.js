@@ -7,12 +7,12 @@ export default function (props) {
         <div className="list-group-item">
             <h4>Detale: </h4>
             <div className="panel-body">
-                <InputField 
+                <InputField
                     name="price"
                     label="Cena:"
                     placeholder="Podaj cenę..."
                 />
-                <InputField 
+                <InputField
                     name="rent"
                     label="Czynsz:"
                     placeholder="Podaj wysokość Czynszu..."
