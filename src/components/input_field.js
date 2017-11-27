@@ -12,13 +12,6 @@ export default (props) => {
             <div className={className} >
                 <label>{label}</label>
                 <input
-                    onKeyUp={() => {
-                        var $input = this,
-                            value = $input.val(),
-                            num = parseFloat(value).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
-
-                        $input.siblings('.add-on').text('$' + num);
-                    }}
                     placeholder={placeholder}
                     className="form-control"
                     type="text"

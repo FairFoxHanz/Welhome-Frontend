@@ -10,6 +10,7 @@ import FeaturesSection from './features_section';
 import ExtraFeaturesSection from './extra_features_section';
 import LocalisationSection from './localisation_section';
 import DescriptionSection from './description_section';
+import parseProperty from '../../helpers/property_parser'
 
 class PropertyNew extends Component {
 
@@ -19,13 +20,9 @@ class PropertyNew extends Component {
     }
 
     onSubmit(values) {
-        const newProperty = {
-            information: {
-                offerType: values.offerType,
-                marketType: values.marketType,
-                propertyType: values.propertyType,
-            }
-        }
+        const newProperty = parseProperty(values);
+        console.log(newProperty);
+        createProperty(newProperty);
     }
 
     render() {
