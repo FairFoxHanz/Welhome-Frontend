@@ -14,12 +14,12 @@ const baseUrl = 'http://localhost:8080/';
 
 export function createProperty(body) {
 
-    const instance = axios.create({ headers });
-    axios.post(`${baseUrl}property`, body)
-    .then(response => console.log(response));
+    const instance = axios.create({ headers: {'Authorization': 'Basic ' + btoa(LOGIN + ":" + PASSWORD),
+    'Credentials': 'same-origin'} });
+    const request = instance({method:'POST', url:`${baseUrl}property`,data: body});
 
     return {
       type: CREATE_PROPERTY,
-      payload: "request"
+      payload: request
     }
 }
