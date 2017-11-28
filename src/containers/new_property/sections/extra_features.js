@@ -1,6 +1,6 @@
 import React from 'react';
-import CheckBoxGroup from '../../components/check_box_group';
-import DropDownSelect from '../../components/drop_down_select';
+import CheckBoxGroup from '../../../components/check_box_group';
+import DropDownSelect from '../../../components/drop_down_select';
 
 export default function (props) {
     return (

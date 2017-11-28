@@ -1,5 +1,5 @@
 import React from 'react';
-import InputField from '../../components/input_field';
+import InputField from '../../../components/input_field';
 
 export default function (props) {
     return (

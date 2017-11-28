@@ -4,12 +4,12 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createProperty } from '../../actions';
 import { fetchSelectionHelpers } from '../../actions/action_helpers';
-import InformationSection from './information_section'
-import DetailsSection from './details_section';
-import FeaturesSection from './features_section';
-import ExtraFeaturesSection from './extra_features_section';
-import LocalisationSection from './localisation_section';
-import DescriptionSection from './description_section';
+import InformationSection from './sections/information'
+import DetailsSection from './sections/details';
+import FeaturesSection from './sections/features';
+import ExtraFeaturesSection from './sections/extra_features';
+import LocalisationSection from './sections/localisation';
+import DescriptionSection from './sections/description';
 import parseProperty from '../../helpers/property_parser'
 
 class PropertyNew extends Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckBoxGroup from '../../components/check_box_group';
+import CheckBoxGroup from '../../../components/check_box_group';
 import { Field } from 'redux-form';
 
 export default function (props) {

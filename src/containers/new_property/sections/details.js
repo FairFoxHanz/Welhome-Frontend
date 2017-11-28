@@ -1,6 +1,6 @@
 import React from 'react';
-import InputField from '../../components/input_field';
-import DropDownSelect from '../../components/drop_down_select';
+import InputField from '../../../components/input_field';
+import DropDownSelect from '../../../components/drop_down_select';
 
 export default function (props) {
     return (

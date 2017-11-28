@@ -1,5 +1,5 @@
 import React from 'react';
-import DropDownSelect from '../../components/drop_down_select';
+import DropDownSelect from '../../../components/drop_down_select';
 
 export default function (props) {
     const { offerTypes, marketTypes, propertyTypes } = props.options;
