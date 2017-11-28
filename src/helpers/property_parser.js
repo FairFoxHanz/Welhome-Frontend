@@ -1,35 +1,39 @@
-export default function(values) {
-    const property = {
-        information: {
-            offerType: values.offerType,
-            marketType: values.marketType,
-            propertyType: values.propertyType,
+export default ({ 
+    offerType, marketType, propertyType,
+    price, rent, buildingType,
+    features,
+    materialType, heatingType, securityTypes,
+    province, town, district, street, streetNumber,
+    description
+ }) => ({
+        'information': {
+            offerType,
+            marketType,
+            propertyType,
         },
-        details: {
-            price: values.price,
-            rent: values.rent,
-            buildingType: values.buildingType
+        'details': {
+            price,
+            rent,
+            buildingType
         },
-        features: {
-            features: values.features
+        'features': {
+            features
         },
-        extraFeatures: {
-            materialType: values.materialType,
-            heatingType: values.heatingType,
-            securityTypes: values.securityTypes,
+        'extraFeatures': {
+            materialType,
+            heatingType,
+            securityTypes,
         },
-        location: {
-            province: values.province,
-            town: values.town,
-            district: values.district,
-            street: values.street,
-            streetNumber: values.streetNumber,
+        'location': {
+            province,
+            town,
+            district,
+            street,
+            streetNumber,
             lat: 0,
             lng: 0
         },
-        description: {
-            description: values.description
+        'description': {
+            description
         },
-    }
-    return property;
-}
+    });
