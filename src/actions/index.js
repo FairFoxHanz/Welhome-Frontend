@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const FETCH_PROPERTIES = 'fetch_properties';
+export const FETCH_ALL_PROPERTIES = 'fetch_all_properties';
 export const CREATE_PROPERTY = 'create_property';
 
 const LOGIN = 'Danny';
@@ -23,3 +23,14 @@ export function createProperty(body) {
       payload: request
     }
 }
+
+export function fetchAllProperties() {
+        const instance = axios.create({ headers: {'Authorization': 'Basic ' + btoa(LOGIN + ":" + PASSWORD),
+        'Credentials': 'same-origin'} });
+        const request = instance({method:'GET', url:`${baseUrl}property`});
+    
+        return {
+          type: FETCH_ALL_PROPERTIES,
+          payload: request
+        }
+    }

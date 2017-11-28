@@ -8,7 +8,7 @@ import InformationSection from './sections/information'
 import DetailsSection from './sections/details';
 import FeaturesSection from './sections/features';
 import ExtraFeaturesSection from './sections/extra_features';
-import LocalisationSection from './sections/localisation';
+import LocationSection from './sections/location';
 import DescriptionSection from './sections/description';
 import parseProperty from '../../helpers/property_parser'
 
@@ -36,7 +36,7 @@ class PropertyNew extends Component {
                         <DetailsSection options={this.props.helpers} />
                         <FeaturesSection options={this.props.helpers} />
                         <ExtraFeaturesSection options={this.props.helpers} />
-                        <LocalisationSection options={this.props.helpers} />
+                        <LocationSection options={this.props.helpers} />
                         <DescriptionSection options={this.props.helpers} />
                         <div className="list-group-item container">
                             <div className="row">

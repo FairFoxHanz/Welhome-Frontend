@@ -6,7 +6,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import reducers from './reducers';
+import NavigationBar from './containers/navigation/';
 import PropertyNew from './containers/new_property/';
+import PropertiesBrowse from './containers/browse_properties/';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -14,7 +16,9 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
+      <NavigationBar />
         <Switch>
+          <Route path="/properties/browse" component={PropertiesBrowse} />
           <Route path="/properties/new" component={PropertyNew} />
         </Switch>
       </div>
