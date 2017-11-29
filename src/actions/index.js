@@ -16,7 +16,7 @@ export function createProperty(body) {
 
     const instance = axios.create({ headers: {'Authorization': 'Basic ' + btoa(LOGIN + ":" + PASSWORD),
     'Credentials': 'same-origin'} });
-    const request = instance({method:'POST', url:`${baseUrl}property`,data: body});
+     const request = instance({method:'POST', url:`${baseUrl}property`,data: body});
 
     return {
       type: CREATE_PROPERTY,
@@ -27,7 +27,7 @@ export function createProperty(body) {
 export function fetchAllProperties() {
         const instance = axios.create({ headers: {'Authorization': 'Basic ' + btoa(LOGIN + ":" + PASSWORD),
         'Credentials': 'same-origin'} });
-        const request = instance({method:'GET', url:`${baseUrl}property`});
+         const request = instance({method:'GET', url:`${baseUrl}property`});
     
         return {
           type: FETCH_ALL_PROPERTIES,
