@@ -30,14 +30,33 @@ class PropertyNew extends Component {
 
         return (
             <div className="card">
-                <div className="list-group list-group-flush">
+                <div className="list-group list-group-flush container">
                     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                        <InformationSection options={this.props.helpers} />
-                        <DetailsSection options={this.props.helpers} />
-                        <FeaturesSection options={this.props.helpers} />
-                        <ExtraFeaturesSection options={this.props.helpers} />
-                        <LocationSection options={this.props.helpers} />
-                        <DescriptionSection options={this.props.helpers} />
+                        <div className="row">
+                            <div className="col-sm">
+                                <InformationSection options={this.props.helpers} />
+                            </div>
+                            <div className="col-sm">
+                                <DetailsSection options={this.props.helpers} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm">
+                                <FeaturesSection options={this.props.helpers} />
+                            </div>
+                            <div className="col-sm">
+                                <ExtraFeaturesSection options={this.props.helpers} />
+                            </div>
+                        </div>
+                        <div className="row">
+
+                            <div className="col-sm">
+                                <LocationSection options={this.props.helpers} />
+                            </div>
+                            <div className="col-sm">
+                                <DescriptionSection options={this.props.helpers} />
+                            </div>
+                        </div>
                         <div className="list-group-item container">
                             <div className="row">
                                 <button type="submit" className="btn btn-success col">Dodaj</button>

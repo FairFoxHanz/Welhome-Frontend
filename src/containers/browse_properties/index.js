@@ -19,7 +19,7 @@ class PropertyNew extends Component {
         return this.props.properties.map(property => {
             console.log(property);
             return (
-                <div key={counter++} className="card">
+                <div key={counter++} className="card btn-light">
                     <div>
                         Województwo: {property.location.province} <br/>
                         Miasto:{property.location.town} <br/>
@@ -42,7 +42,7 @@ class PropertyNew extends Component {
     render() {
         console.log(this.props.properties);
         return (
-            <div className="card">
+            <div>
                 {this.renderPropertiesList()}
             </div>
         );
