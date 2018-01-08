@@ -29,7 +29,7 @@ class PropertyNew extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <div className="card">
+            <div className="card w-75 border-0 centered mx-auto">
                 <div className="list-group list-group-flush container">
                     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                         <div className="row">
@@ -58,9 +58,9 @@ class PropertyNew extends Component {
                             </div>
                         </div>
                         <div className="list-group-item container">
-                            <div className="row">
-                                <button type="submit" className="btn btn-success col">Dodaj</button>
-                                <Link className="btn btn-secondary col" to="/">Anuluj</Link>
+                            <div className="row justify-content-around">
+                                <button type="submit" className="btn btn-success col-4">Dodaj</button>
+                                <Link className="btn btn-secondary col-4" to="/">Anuluj</Link>
                             </div>
                         </div>
                     </form>

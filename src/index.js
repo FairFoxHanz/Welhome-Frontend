@@ -16,11 +16,14 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
-      <NavigationBar />
+        <NavigationBar />
         <Switch>
           <Route path="/properties/browse" component={PropertiesBrowse} />
           <Route path="/properties/new" component={PropertyNew} />
         </Switch>
+        <footer className="sticky-bottom card text-center">
+         <h6 className="font-weight-light"> made by: Daniel Wręczycki and Kewin Bobel </h6>
+        </footer>
       </div>
     </BrowserRouter>
   </Provider>
