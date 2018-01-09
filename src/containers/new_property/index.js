@@ -10,7 +10,8 @@ import FeaturesSection from './sections/features';
 import ExtraFeaturesSection from './sections/extra_features';
 import LocationSection from './sections/location';
 import DescriptionSection from './sections/description';
-import parseProperty from '../../helpers/property_parser'
+import Uploader from './sections/uploader'
+import parseProperty from '../../helpers/property_parser';
 
 class PropertyNew extends Component {
 
@@ -55,6 +56,11 @@ class PropertyNew extends Component {
                             </div>
                             <div className="col-sm">
                                 <DescriptionSection options={this.props.helpers} />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-sm">
+                                <Uploader />
                             </div>
                         </div>
                         <div className="list-group-item container">
