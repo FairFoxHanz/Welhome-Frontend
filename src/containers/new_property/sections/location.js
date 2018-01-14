@@ -4,7 +4,7 @@ import InputField from '../../../components/input_field';
 export default function (props) {
     return (
         <div className="list-group-item">
-            <h4>Lokalizacja: </h4>
+            <h4>Lokalizacja </h4>
             <div>
                 <InputField
                     name="province"

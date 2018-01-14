@@ -30,7 +30,7 @@ class PropertyNew extends Component {
         const { handleSubmit } = this.props;
 
         return (
-            <div className="card w-75 border-0 centered mx-auto">
+            <div>
                 <div className="list-group list-group-flush container">
                     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                         <div className="row">

@@ -5,7 +5,7 @@ import DropDownSelect from '../../../components/drop_down_select';
 export default function (props) {
     return (
         <div className="list-group-item">
-            <h4>Detale: </h4>
+            <h4>Detale </h4>
             <div className="panel-body">
                 <InputField
                     name="price"

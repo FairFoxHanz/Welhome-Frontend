@@ -4,9 +4,9 @@ import { Field } from 'redux-form';
 
 export default function (props) {
     return (
-        <div className="list-group-item h-100">
-            <h4>Description: </h4>
-            <Field className="h-75 w-75" name="description" label="Description" component="textArea" />
+        <div className=" h-75">
+            <h4>Opis </h4>
+            <Field className="h-100 w-75" name="description" label="Opis" component="textArea" />
         </div>
     );
 }
