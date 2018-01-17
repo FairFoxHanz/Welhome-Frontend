@@ -12,6 +12,7 @@ import reducers from './reducers';
 import NavigationBar from './containers/navigation/';
 import PropertyNew from './containers/new_property/';
 import PropertiesBrowse from './containers/browse_properties/';
+import PropertyDetails from './containers/browse_properties/details';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -21,6 +22,7 @@ ReactDOM.render(
       <div className="container fill">
         <NavigationBar />
         <Route exact path="/properties/browse" component={PropertiesBrowse} />
+        <Route exact path="/properties/details" component={PropertyDetails} />
         <Route exact path="/properties/new" component={PropertyNew} />
         <Footer />
       </div>

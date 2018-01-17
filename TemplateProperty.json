@@ -1,0 +1,57 @@
+{
+    "information": {
+        "offertType": "Na sprzedaż",
+        "marketType": "Rynek pierwotny",
+        "propertyType": "Mieszkania"
+    },
+    "details": {
+        "price": 100000,
+        "rent": 500,
+        "buildingType": "Apartament"
+    },
+    "features": {
+        "features": [
+            "Winda",
+            "Balkon",
+            "Garaż/miejsce postojowe",
+            "Klimatyzacja"
+        ]
+    },
+    "extraFeatures": {
+        "materialType": "Beton",
+        "heatingType": "Ogrzewanie centralne gazowe",
+        "securityTypes": [
+            "Domofon / wideofon",
+            "Monitoring"
+        ]
+    },
+    "location": {
+        "province": "Dolny Śląsk",
+        "town": "Wrocław",
+        "district": "Psie Pole",
+        "street": "Czekoladowa",
+        "streetNumber": "15",
+        "lat": 0,
+        "lng": 0
+    },
+    "description": {
+        "description": "This is a test property"
+    },
+    "account": {
+        "name": "Danny",
+        "email": "dannywreczycki@gmail.com",
+        "bio": "Konto administratora portalu Welhome",
+        "roles": [
+            "RULE_ADMIN",
+            "ROLE_USER"
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/property/5a1474b3452976044f6b581e"
+        },
+        "property": {
+            "href": "http://localhost:8080/property/5a1474b3452976044f6b581e"
+        }
+    }
+}

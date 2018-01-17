@@ -18,6 +18,7 @@ export default () => {
                 <div className="navbar-nav">
                     <a className={isActiveNavBar('/properties/new')} href="/properties/new">Dodaj</a>
                     <a className={isActiveNavBar('/properties/browse')} href="/properties/browse">Szukaj</a>
+                    <a className={isActiveNavBar('/properties/details')} href="/properties/details">testik</a>
                 </div>
             </div>
         </nav>
