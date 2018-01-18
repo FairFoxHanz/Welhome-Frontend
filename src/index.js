@@ -21,9 +21,12 @@ ReactDOM.render(
     <BrowserRouter>
       <div className="container fill">
         <NavigationBar />
-        <Route exact path="/properties/browse" component={PropertiesBrowse} />
-        <Route exact path="/properties/details" component={PropertyDetails} />
-        <Route exact path="/properties/new" component={PropertyNew} />
+        <Switch>
+          <Route exact path="/properties/details" component={PropertyDetails} />
+          <Route exact path="/properties/new" component={PropertyNew} />
+          <Route exact path="/properties/browse" component={PropertiesBrowse} />
+          <Route path="/properties/prop" component={PropertyDetails} />
+        </Switch>
         <Footer />
       </div>
     </BrowserRouter>

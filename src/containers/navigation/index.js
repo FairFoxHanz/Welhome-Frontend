@@ -16,9 +16,9 @@ export default () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a className={isActiveNavBar('/properties/new')} href="/properties/new">Dodaj</a>
-                    <a className={isActiveNavBar('/properties/browse')} href="/properties/browse">Szukaj</a>
-                    <a className={isActiveNavBar('/properties/details')} href="/properties/details">testik</a>
+                    <Link className={isActiveNavBar('/properties/new')} to="/properties/new">Dodaj</Link>
+                    <Link className={isActiveNavBar('/properties/browse')} to="/properties/browse">Szukaj</Link>
+                    <Link className={isActiveNavBar('/properties/details')} to="/properties/details">testik</Link>
                 </div>
             </div>
         </nav>

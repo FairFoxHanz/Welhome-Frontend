@@ -1,10 +1,10 @@
 export default ({ 
-    offerType, marketType, propertyType,
-    price, rent, buildingType,
-    features,
-    materialType, heatingType, securityTypes,
-    province, town, district, street, streetNumber,
-    description
+    offerType = "", marketType = "", propertyType = "",
+    price = "", rent = "", buildingType = "",
+    features ="",
+    materialType = "", heatingType = "", securityTypes = "",
+    province = "", town = "", district = "", street = "", streetNumber = "",
+    description = ""
  }) => ({
         'information': {
             offerType,

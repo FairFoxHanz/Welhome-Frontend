@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import SimpleSlider from './slider';
 import GoogleMap from './g_maps';
+import { connect } from 'react-redux';
+import {fetchProperty} from '../../actions/'
+import propertyStub from '../../helpers/property_parser'
 
 class Details extends Component {
+
+    constructor(props){
+        super(props);
+        const pathName = window.location.pathname;
+        
+        const propertyRef = pathName.substring(pathName.indexOf('prop/') + 5);
+        this.props.fetchProperty(propertyRef);
+    }
+
     render() {
+        const selectedProperty = this.props.selectedProperty || propertyStub({});
+        console.log(selectedProperty);
         return (
             <div className="container mt-2">
                 <div className="card w-75 mt-2 mb-2 mx-auto">
-                    <h6>Cena: </h6>
-                    <h6>Czynsz: </h6>
+                    <h6>Cena: {selectedProperty.details.price}</h6>
+                    <h6>Czynsz: {selectedProperty.details.rent}</h6>
                 </div>
                 <div className="card mt-2 mx-auto w-75">Lorem ipsum dolor sit amet,
                      consectetur adipiscing elit,
@@ -23,9 +37,9 @@ class Details extends Component {
                      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                      </div>
                 <div className="card w-75 mt-2 mb-2 mx-auto">
-                    <h6>Budynek: </h6>
-                    <h6>Materiał: </h6>
-                    <h6>Ogrzewanie: </h6>
+                    <h6>Budynek: {selectedProperty.details.buildingType}</h6>
+                    <h6>Materiał: {selectedProperty.extraFeatures.materialType}</h6>
+                    <h6>Ogrzewanie: {selectedProperty.extraFeatures.heatingType}</h6>
                     <h6>Ochrony: </h6>
                 </div>
                 <div className="row mx-auto w-75">
@@ -50,7 +64,13 @@ class Details extends Component {
     }
 }
 
-export default Details;
+function mapStateToProps({ selectedProperty }) {
+    return { 
+        selectedProperty
+    }
+}
+
+export default connect(mapStateToProps, { fetchProperty })(Details);
 // offerType, 
 // marketType, 
 // propertyType,
